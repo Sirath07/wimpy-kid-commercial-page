@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wimpy Kid Marketing Website</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>Diary of a Wimpy Kid</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#books">Books</a></li>
+        <li><a href="#characters">Characters</a></li>
+        <li><a href="#funzone">Fun Zone</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-text">
+      <h2>Step into Greg Heffley’s World</h2>
+      <p>Discover the hilarious journey of middle school misadventures!</p>
+      <button onclick="showAlert()">Explore Now</button>
+    </div>
+
+  <!-- Hero Slider -->
+  <div class="hero-slider">
+    <div class="slides">
+      <img src="book1.jpg" alt="Wimpy Kid Book 1">
+      <img src="book2.jpg" alt="Rodrick Rules">
+      <img src="book3.jpg" alt="The Last Straw">
+      <img src="book4.jpg" alt="Dog Days">
+    </div>
+  </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about">
+    <h2>About the Series</h2>
+    <p>The Diary of a Wimpy Kid series by Jeff Kinney has entertained millions with Greg Heffley’s adventures. Explore the books, meet the characters, and dive into the fun!</p>
+
+    <!-- Doodles -->
+    <img src="arrow.png" class="doodle doodle-about-left wiggle" alt="Star Doodle">
+    <img src="doodle-stars.png" class="doodle doodle-about-right float" alt="Arrow Doodle">
+  </section>
+
+  <!-- Featured Books -->
+  <section id="books" class="books">
+    <h2>Featured Books</h2>
+    <!-- Doodles for Books -->
+    <img src="drums.png" class="doodle doodle-books-left bounce" alt="Star Doodle">
+    <img src="plane.png" class="doodle doodle-books-right wiggle" alt="Arrow Doodle">
+    <img src="pencil.png" class="doodle doodle-books-top float" alt="Squiggle Doodle">
+
+
+    <div class="carousel">
+      <button class="prev" onclick="prevBook()">&#10094;</button>
+      <div class="book-container" id="book-container">
+        <div class="book-card">
+          <img src="book1.jpg" alt="Book 1">
+          <h3>Book 1</h3>
+          <p>The story that started it all!</p>
+          <button>Buy Now</button>
+        </div>
+        <div class="book-card">
+          <img src="book2.jpg" alt="Rodrick Rules">
+          <h3>Rodrick Rules</h3>
+          <p>Greg’s brother causes trouble again!</p>
+          <button>Buy Now</button>
+        </div>
+        <div class="book-card">
+          <img src="book5.jpg" alt="The Last Straw">
+          <h3>The Last Straw</h3>
+          <p>Things keep getting worse for Greg...</p>
+          <button>Buy Now</button>
+        </div>
+        <div class="book-card">
+          <img src="book4.jpg" alt="Dog Days">
+          <h3>Dog Days</h3>
+          <p>Summer vacation isn’t always fun...</p>
+          <button>Buy Now</button>
+        </div>
+        <div class="book-card">
+          <img src="book3.jpg" alt="The Ugly Truth">
+          <h3>The Ugly Truth</h3>
+          <p>Greg faces the awkward parts of growing up.</p>
+          <button>Buy Now</button>
+        </div>
+      </div>
+      <button class="next" onclick="nextBook()">&#10095;</button>
+    </div>
+  </section>
+
+ <!-- Characters Section -->
+<section id="characters" class="characters">
+  <h2>Meet the Characters</h2>
+
+  <!-- Doodles for Characters Section -->
+  <img src="snapshot.png" class="doodle doodle-char-left pop" alt="Speech Bubble">
+  <img src="bulb.png" class="doodle doodle-char-right slide" alt="Footprint">
+  <img src="romantic.png" class="doodle doodle-char-top twinkle" alt="Twinkling Star">
+
+  <div class="character-grid">
+    <!-- Greg -->
+    <div class="character-card">
+      <img src="role1.png" alt="Greg Heffley">
+      <h3>Greg Heffley</h3>
+      <p>“I’m stuck in middle school… forever!”</p>
+    </div>
+
+    <!-- Rowley -->
+    <div class="character-card">
+      <img src="role2.webp" alt="Rowley Jefferson">
+      <h3>Rowley Jefferson</h3>
+      <p>“Zoowee Mama!”</p>
+    </div>
+
+    <!-- Rodrick -->
+    <div class="character-card">
+      <img src="role31.webp" alt="Rodrick">
+      <h3>Rodrick</h3>
+      <p>“LoLoLoLoLo” (Rodrick Rules!)</p>
+    </div>
+
+    <!-- Manny -->
+    <div class="character-card">
+      <img src="role8.jpg" alt="Manny Heffley">
+      <h3>Manny Heffley</h3>
+      <p>“Bubby!”</p>
+    </div>
+
+    <!-- Susan -->
+    <div class="character-card">
+      <img src="role5.png" alt="Susan Heffley">
+      <h3>Susan Heffley</h3>
+      <p>Greg’s well-meaning but embarrassing mom.</p>
+    </div>
+
+    <!-- Frank -->
+    <div class="character-card">
+      <img src="role6.png" alt="Frank Heffley">
+      <h3>Frank Heffley</h3>
+      <p>Greg’s dad who wants him to toughen up.</p>
+    </div>
+
+    <!-- Fregley -->
+    <div class="character-card">
+      <img src="role7.webp" alt="Fregley">
+      <h3>Fregley</h3>
+      <p>“Wanna see my secret freckle?”</p>
+    </div>
+
+    <!-- Holly Hills -->
+    <div class="character-card">
+      <img src="role4.webp" alt="Holly Hills">
+      <h3>Holly Hills</h3>
+      <p>Greg’s crush from school.</p>
+    </div>
+  </div>
+</section>
+
+  <!-- Fun Zone -->
+  <section id="funzone" class="fun-zone">
+    <h2>🎮 Welcome to the Fun Zone!</h2>
+    <p>Play, explore, and test your Wimpy Kid knowledge.</p>
+
+    <!-- Doodles for Fun Zone -->
+    <img src="game.png" class="doodle doodle-fun-left rotate" alt="Dice Doodle">
+    <img src="game-controller.png" class="doodle doodle-fun-right float" alt="Controller Doodle">
+    <img src="electric-guitar.png" class="doodle doodle-fun-top pop" alt="Paint Splash">
+
+
+    <div class="quiz-box">
+      <h3>Which Wimpy Kid Character Are You?</h3>
+      <button onclick="startQuiz()">Take the Quiz 🎲</button>
+      <p id="quiz-result"></p>
+    </div>
+
+    <div class="joke-box">
+      <h3>😂 Random Wimpy Kid Joke</h3>
+      <button onclick="tellJoke()">Get a Joke 🤪</button>
+      <p id="joke-result"></p>
+    </div>
+
+    <div class="doodle-game">
+      <h3>🎨 Doodle Challenge</h3>
+      <p>Click the button to reveal a random doodle!</p>
+      <button onclick="randomDoodle()">Show Doodle ✏️</button>
+      <div id="doodle-display"></div>
+    </div>
+  </section>
+
+  <!-- Newsletter Signup -->
+  <section id="contact" class="newsletter">
+    <h2>Join the Wimpy Club</h2>
+    <!-- Doodles for Newsletter -->
+    <img src="letter.png" class="doodle doodle-news-left slide" alt="Mail Doodle">
+    <img src="push-pins.png" class="doodle doodle-news-top twinkle" alt="Twinkling Star">
+    <img src="bulb.png" class="doodle doodle-news-right float" alt="Confetti">
+
+    <p>Get updates on new books and events!</p>
+    <form onsubmit="subscribe(event)">
+      <input type="email" id="email" placeholder="Enter your email" required>
+      <button type="submit">Subscribe</button>
+    </form>
+    <p id="subscribe-msg"></p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Wimpy Kid Marketing Project | Made with ❤️ by You</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

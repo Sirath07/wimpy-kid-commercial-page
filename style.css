@@ -1,0 +1,452 @@
+/* General Style */
+body {
+  margin: 0;
+  font-family: 'Gloria Hallelujah', cursive;
+  background: url("paper-bg.jpg") repeat-y center top;
+  background-size: auto 40px;  /* makes it fill the whole screen */
+  background-attachment: fixed;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #e63946;
+  padding: 15px 30px;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 40px;
+  background: url("paper-bg.jpg") no-repeat center center;
+  background-size: cover;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hero Text */
+.hero-text {
+  flex: 1;
+  min-width: 300px;
+  z-index: 2;
+}
+
+.hero-text h2 {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.hero-text p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.hero-text button {
+  padding: 12px 25px;
+  border: none;
+  background: #e63946;
+  color: white;
+  font-size: 18px;
+  font-family: inherit;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.hero-text button:hover {
+  background: #b71c1c;
+}
+
+/* Slider Container */
+.hero-slider {
+  flex: 1;
+  min-width: 280px;
+  max-width: 400px;
+  height: 350px;
+  position: relative;
+  overflow: hidden;
+  border: 3px solid black;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 6px 6px 0px black;
+}
+
+/* Images stacked */
+.slides img {
+  position: absolute;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain; /* keeps full book cover visible */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  animation: fadeSlide 20s infinite;
+}
+
+
+/* Fade Animation - loop for 4 images */
+.slides img:nth-child(1) { animation-delay: 0s; }
+.slides img:nth-child(2) { animation-delay: 5s; }
+.slides img:nth-child(3) { animation-delay: 10s; }
+.slides img:nth-child(4) { animation-delay: 15s; }
+
+/* Keyframes */
+@keyframes fadeSlide {
+  0%   { opacity: 0; }
+  5%   { opacity: 1; }
+  25%  { opacity: 1; }
+  30%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* About Section */
+.about {
+  padding: 40px;
+  text-align: center;
+  background: #f1faee;
+  position: relative;
+}
+
+/* Doodle Animations */
+.doodle {
+  position: absolute;
+  width: 60px;
+  opacity: 0;
+  transform: scale(0.5) rotate(-20deg);
+  transition: all 0.6s ease-out;
+  z-index: 0;
+}
+
+.doodle-left { left: 10%; top: 20%; }
+.doodle-right { right: 10%; top: 40%; }
+.doodle-bottom { left: 50%; bottom: 10%; transform: translateX(-50%) scale(0.5); }
+
+.doodle.show {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
+
+/* Featured Books */
+.books {
+  padding: 40px;
+  text-align: center;
+  background: #fef9f0;
+}
+
+.carousel {
+  position: relative;
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+}
+
+.book-container {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+}
+
+.book-card {
+  flex: 0 0 250px;
+  background: white; 
+  border: 2px solid black;
+  padding: 20px;
+  margin: 10px;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.book-card img {
+  width: 100%;
+  height: auto;
+}
+
+.book-card:hover {
+  transform: scale(1.05);
+  box-shadow: 5px 5px 0px black;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #e63946;
+  color: white;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.prev:hover, .next:hover { background: #b71c1c; }
+.prev { left: -50px; }
+.next { right: -50px; }
+
+/* Characters Section */
+.characters {
+  padding: 60px 20px;
+  background: #edf6f9;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.characters h2 {
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  color: #333;
+  text-shadow: 2px 2px #fff;
+}
+
+/* Character Grid */
+.character-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 cards per row */
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px;
+}
+/* Character Card */
+.character-card {
+  background: #fff;
+  border: 2px dashed black;
+  border-radius: 12px;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 3px 3px 0px #000;
+}
+
+.character-card:hover {
+  transform: rotate(-2deg) scale(1.07);
+  box-shadow: 6px 6px 0px #000;
+}
+
+.character-card img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 12px;
+  border-radius: 8px;
+}
+
+.character-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: #222;
+}
+
+.character-card p {
+  font-size: 0.95rem;
+  color: #555;
+  font-style: italic;
+}
+
+/* Fun Zone */
+.fun-zone {
+  padding: 40px;
+  text-align: center;
+  background: #fef9c3;
+
+}
+
+.fun-zone .quiz-box,
+.fun-zone .joke-box,
+.fun-zone .doodle-game {
+  margin: 20px auto;
+  max-width: 400px;
+  padding: 20px;
+  border: 2px solid #e63946;
+  border-radius: 10px;
+  background: white;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+
+.fun-zone .quiz-box.show,
+.fun-zone .joke-box.show,
+.fun-zone .doodle-game.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fun-zone button {
+  padding: 10px 20px;
+  border: none;
+  background: #ff7f11;
+  color: white;
+  font-family: inherit;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.fun-zone button:hover { background: #d35400; }
+
+#quiz-result, #joke-result, #doodle-display {
+  margin-top: 15px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Newsletter */
+.newsletter {
+  padding: 40px;
+  background: #d0f4de; 
+  text-align: center;
+}
+
+.newsletter input {
+  padding: 10px;
+  border: 2px solid black;
+  width: 250px;
+  font-family: inherit;
+}
+
+.newsletter button {
+  padding: 10px 20px;
+  margin-left: 10px;
+  background: #1d3557;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.newsletter button:hover { background: #457b9d; }
+
+/* Footer */
+footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
+
+
+/* Doodle Base */
+.doodle {
+  position: absolute;
+  width: 50px;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: all 0.6s ease-out;
+  z-index: 0;
+}
+
+.books, .characters, .fun-zone, .newsletter {
+  position: relative; /* now doodles will align inside the section */
+}
+
+
+/* Section-specific positions */
+
+.doodle-about-left { left: 5%; top: 10%; }
+.doodle-about-right { right: 5%; top: 15%; }
+
+
+.doodle-books-left { left: 5%; top: 10%; }
+.doodle-books-right { right: 5%; top: 15%; }
+.doodle-books-top { left: 50%; top: 0%; transform: translateX(-50%) scale(0.5); }
+
+/* Characters Doodles */
+.doodle-char-left { left: 5%; top: 5%; }
+.doodle-char-right { right: 5%; top: 10%; }
+.doodle-char-top { left: 50%; top: 0%; transform: translateX(-50%) scale(0.5); }
+
+/* Fun Zone Doodles */
+.doodle-fun-left { left: 5%; top: 10%; }
+.doodle-fun-right { right: 5%; top: 15%; }
+.doodle-fun-top { left: 50%; top: 0%; transform: translateX(-50%) scale(0.5); }
+
+/* Newsletter Doodles */
+.doodle-news-left { left: 5%; top: 5%; }
+.doodle-news-top { left: 50%; top: 0%; transform: translateX(-50%) scale(0.5); }
+.doodle-news-right { right: 5%; top: 10%; }
+
+/* Animation Keyframes */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(10deg); }
+  75% { transform: rotate(-10deg); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes pop {
+  0% { transform: scale(0.5); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes slide {
+  0% { transform: translateX(-50px); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Assign animations */
+.bounce { animation: bounce 2s infinite; }
+.wiggle { animation: wiggle 1.5s infinite; }
+.float { animation: float 3s infinite ease-in-out; }
+.pop { animation: pop 0.6s forwards; }
+.slide { animation: slide 0.6s forwards; }
+.twinkle { animation: twinkle 1s infinite; }
+.rotate { animation: rotate 4s linear infinite; }
+
+/* Show doodle on scroll */
+.doodle.show { opacity: 1; transform: scale(1); }
